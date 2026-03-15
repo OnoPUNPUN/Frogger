@@ -20,14 +20,16 @@ while True:
             pygame.quit()
             sys.exit()
 
+    dt = clock.tick() / 1000
+
     keys = pygame.key.get_pressed()
 
     # Update time
-    all_sprites.update(keys)
+    all_sprites.update(keys, dt)
 
     # Delta Time
     dt = clock.tick() / 1000
-
+    display_surf.fill("black")
     # Updates
     all_sprites.draw(display_surf)
 
